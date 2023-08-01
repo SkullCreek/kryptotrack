@@ -9,6 +9,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
     FlexLayoutModule,
     BrowserAnimationsModule,
     LoadingBarRouterModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

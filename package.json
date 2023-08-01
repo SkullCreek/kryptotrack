@@ -23,6 +23,10 @@
     "@angular/router": "^16.1.0",
     "@ngx-loading-bar/core": "^6.0.2",
     "@ngx-loading-bar/router": "^6.0.2",
+    "@swimlane/ngx-charts": "^20.4.1",
+    "angular-google-charts": "^2.2.3",
+    "chart.js": "^4.3.2",
+    "ng2-charts": "^4.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

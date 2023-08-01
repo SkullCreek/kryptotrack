@@ -9,6 +9,9 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angula
 import { DialogBodyComponent } from './dialog-body/dialog-body.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { NgChartsModule } from 'ng2-charts';
+import { GoogleChartsModule } from 'angular-google-charts';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatDialogModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    NgChartsModule,
+    GoogleChartsModule,
   ],
   providers:[RequestService]
 })

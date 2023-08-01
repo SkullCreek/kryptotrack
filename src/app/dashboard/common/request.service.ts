@@ -13,6 +13,14 @@ export class RequestService {
     return this.http.get<any>("https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD").pipe(catchError(this.handleError));
   }
 
+  CryptoData(id: string){
+    return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/${id}`).pipe(catchError(this.handleError));
+  }
+
+  ChartData(id: string, currency: string, days: number = 365){
+    return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`).pipe(catchError(this.handleError));
+  }
+
   handleError(error: HttpErrorResponse): Observable<any>{
     if(error.error instanceof ErrorEvent){
       return throwError("Network Error");

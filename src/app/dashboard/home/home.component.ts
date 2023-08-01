@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit{
   }
 
   openDialog(coin: any): void {
+    console.log(coin);
+    
     this.dialog.open(DialogBodyComponent,{
       data: coin
     })
@@ -39,6 +41,8 @@ export class HomeComponent implements OnInit{
         this.coins = response;
       })
     }, 300000);
+    
+    // this.reqService.ChartData(this.coins.id, "USD", 365)
   }
   
   showmore(): void{
@@ -49,7 +53,7 @@ export class HomeComponent implements OnInit{
   }
 
   getCoinDetails(coin: any):void{
-    this.openDialog(coin);
-    
+    let finalData = [coin]
+    this.openDialog(finalData);
   }
 }
