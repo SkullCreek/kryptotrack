@@ -1,0 +1,16 @@
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+    :root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+</style>
+<div id="content" class="bg-neutral-900  w-[50vw] rounded-lg p-6 h-[80vh] overflow-y-auto customscroll">
+    <h1 class="text-2xl text-center pb-5">{{data.name}}</h1>
+    <div class="absolute top-5 right-5">
+        <button mat-mini-fab color="black" (click)="closeDialog()" aria-label="Example icon button with a delete icon " >
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>  
+</div>
