@@ -37,8 +37,6 @@ export class DialogBodyComponent implements OnInit {
     this.reqService.StorePriceAlert(formdata).subscribe((response)=>{
       alert(response.message)
     })
-
-    alert(email);
   }
 
 

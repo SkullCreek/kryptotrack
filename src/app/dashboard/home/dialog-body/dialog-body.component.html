@@ -6,7 +6,7 @@
   :root { font-family: 'Inter var', sans-serif; }
 }
 </style>
-<div id="content" class="bg-neutral-900  w-[50vw] rounded-lg p-6 h-[80vh] overflow-y-auto customscroll">
+<div id="content" class="bg-neutral-900  md:w-[80vw] lg:w-[80vw] xl:w-[50vw] rounded-lg p-6 sm:h-[700px] overflow-y-auto customscroll">
     <h1 class="text-2xl text-center pb-5">{{data[0].name}}</h1>
     <div class="absolute top-5 right-5">
         <button mat-mini-fab color="black" (click)="closeDialog()" aria-label="Example icon button with a delete icon " >
@@ -42,10 +42,16 @@
             </svg>
         </div>
         <div class="pt-5 px-10">
-            <form class="flex justify-between w-[100%]" [formGroup]="price_alert_form" (submit)="setPriceAlert(data[0].id)">
-                <input type="number" class="bg-transparent border border-teal-50 px-3" placeholder="Lower Limit" formControlName="lower">
-                <input type="number" class="bg-transparent border border-teal-50 px-3" placeholder="Upper Limit" formControlName="upper">
-                <button class="bg-blue-800 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">Price Alert</button>
+            <form class="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row flex-wrap justify-between w-[100%]" [formGroup]="price_alert_form" (submit)="setPriceAlert(data[0].id)">
+                <div>
+                    <input type="number" class="bg-transparent border border-teal-50 px-3" placeholder="Lower Limit" formControlName="lower">
+                </div>
+                <div>
+                    <input type="number" class="bg-transparent border border-teal-50 px-3" placeholder="Upper Limit" formControlName="upper">
+                </div>
+                <div>
+                    <button class="bg-blue-800 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">Price Alert</button>
+                </div>
             </form>
         </div>
     </div>
