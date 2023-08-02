@@ -3,12 +3,11 @@ import smtplib
 
 class Email:
 
-  def __init__(self, receiver, lower_limit, upper_limit, user):
+  def __init__(self, receiver, lower_limit, upper_limit):
     self.receiver = receiver
     self.sender = "darpanhh11819@gmail.com"
     self.lower_limit = lower_limit
     self.upper_limit = upper_limit
-    self.user = user
     self.message = """From: darpanhh11819@gmail.com
     To: """+self.receiver+"""
     Subject: Urgent Notification: Crypto Currency Price Limit Reached
