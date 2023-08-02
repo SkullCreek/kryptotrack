@@ -116,6 +116,13 @@ Firstly download node.js
 
 ### Installation
 
+Using Docker
+
+1. Go to the parent directory /kryptotrackand type the following, if images are created then it is working fine (Angular, Flask)
+  ```sh
+   docker-compose up
+   ```  
+
 Clone the project and access the folder
 
 1. Get a free API at https://www.coingecko.com/en/api
