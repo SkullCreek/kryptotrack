@@ -9,7 +9,7 @@ WORKDIR ${WORK_DIR}
 COPY package.json ${WORK_DIR}
 COPY package-lock.json ${WORK_DIR}
 
-RUN npm install -g @angular/cli@15.0.4
+RUN npm install -g @angular/cli@16.1.0
 RUN npm install -force
 
 COPY . ${WORK_DIR}

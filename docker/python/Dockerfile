@@ -1,6 +1,16 @@
-FROM python:3-alpine3.15
+FROM python:3.9 as builder
+
 WORKDIR /app
-COPY . /app
-RUN pip install -r requirements.txt
-EXPOSE 5000
-CMD python ./app.py
+
+COPY ../server/ .
+
+FROM library/python:3.6-stretch
+
+COPY ../server/requirements.txt /
+RUN pip install -r /requirements.txt
+
+WORKDIR /app
+
+COPY --from=builder /app .
+
+CMD ["python", "app.py"]

@@ -1,13 +1,15 @@
 version: '3.8'
 services:
-  python-app:
-    build: 
-      context: ./
+  my_python_app:
+    build:
+      context: .
       dockerfile: docker/python/Dockerfile
+    container_name: my_python_app_container
+    restart: always
     volumes:
-      - ./server:/var/www/html
-    ports:
-      - 5000:5000
+      - ./server:/app
+    network_mode: host
+    command: python app.py
   angular-app:
     build: 
       context: ./
