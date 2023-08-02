@@ -10,6 +10,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { NgChartsModule } from 'ng2-charts';
+import { AuthService } from './common/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +25,9 @@ import { NgChartsModule } from 'ng2-charts';
     BrowserAnimationsModule,
     LoadingBarRouterModule,
     NgChartsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
