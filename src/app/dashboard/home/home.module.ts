@@ -11,6 +11,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { NgChartsModule } from 'ng2-charts';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
     MatButtonModule,
     NgChartsModule,
     GoogleChartsModule,
+    ReactiveFormsModule
   ],
   providers:[RequestService]
 })

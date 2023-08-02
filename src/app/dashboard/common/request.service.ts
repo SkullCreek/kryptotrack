@@ -21,6 +21,10 @@ export class RequestService {
     return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`).pipe(catchError(this.handleError));
   }
 
+  StorePriceAlert(formdata: any){
+    return this.http.post<any>(`http://127.0.0.1:5000/priceAlert`,formdata).pipe(catchError(this.handleError));
+  }
+
   handleError(error: HttpErrorResponse): Observable<any>{
     if(error.error instanceof ErrorEvent){
       return throwError("Network Error");

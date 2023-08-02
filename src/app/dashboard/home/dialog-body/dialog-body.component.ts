@@ -20,11 +20,26 @@ export class DialogBodyComponent implements OnInit {
   ) {
   }
 
-  public price_alert = this.fb.group({
-    lower: [''],
-    upper: ['']
+  public price_alert_form = this.fb.group({
+    lower: [0],
+    upper: [0]
   })
 
+  setPriceAlert(dataid: any){
+    let token = sessionStorage.getItem("_eu")
+    let email = JSON.parse(atob(String(token?.split('.')[1]))).username;
+
+    let formdata = new FormData();
+    formdata.append('username', email);
+    formdata.append('lower', String(this.price_alert_form.value.lower))
+    formdata.append('upper', String(this.price_alert_form.value.upper))
+    formdata.append('coinid', dataid)
+    this.reqService.StorePriceAlert(formdata).subscribe((response)=>{
+      alert(response.message)
+    })
+
+    alert(email);
+  }
 
 
   ngOnInit(): void {
