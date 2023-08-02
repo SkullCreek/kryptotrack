@@ -1,3 +1,7 @@
 PyJWT~=2.6.0
 Flask~=1.1.2
 pymongo~=4.3.3
+
+requests~=2.27.1
+schedule~=0.5.0
+django-scheduler~=0.10.1
