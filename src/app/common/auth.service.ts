@@ -11,11 +11,11 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   loginUser(data: any){
-    return this.http.post<any>("http://127.0.0.1:5000/login",data).pipe(catchError(this.handleError));
+    return this.http.post<any>("http://localhost:5000/login",data).pipe(catchError(this.handleError));
   }
 
   signupUser(data: any){
-    return this.http.post<any>("http://127.0.0.1:5000/signup",data).pipe(catchError(this.handleError));
+    return this.http.post<any>("http://localhost:5000/signup",data).pipe(catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse): Observable<any>{

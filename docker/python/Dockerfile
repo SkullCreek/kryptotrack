@@ -8,6 +8,7 @@ FROM library/python:3.6-stretch
 
 COPY ../server/requirements.txt /
 RUN pip install -r /requirements.txt
+RUN pip install "pymongo[srv]"
 
 WORKDIR /app
 

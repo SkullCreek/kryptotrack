@@ -149,6 +149,6 @@ ng s -o --ssl true
 Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 Server Side
-Run py app.py and py Alert.py for a backend server which Navigates to http://127.0.0.1:5000. Aleart.py is a scheduler which sends mails for Price Alert.
+Run py app.py and py Alert.py for a backend server which Navigates to http://localhost:5000. Aleart.py is a scheduler which sends mails for Price Alert.
 
 Try to login with the frontend, check cryptocurrency prices and Set upper and lower bounds.
