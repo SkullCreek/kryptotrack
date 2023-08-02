@@ -7,17 +7,26 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { RequestService } from '../../common/request.service';
 import { Chart, ChartConfiguration, ChartOptions } from 'chart.js';
 import { ChartType } from 'angular-google-charts';
+import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-dialog-body',
   templateUrl: './dialog-body.component.html',
   styleUrls: ['./dialog-body.component.css']
 })
 export class DialogBodyComponent implements OnInit {
-  constructor(private reqService: RequestService,
+  constructor(private fb: FormBuilder, private reqService: RequestService,
     public dialogRef: MatDialogRef<DialogBodyComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
   }
+
+  public price_alert = this.fb.group({
+    lower: [''],
+    upper: ['']
+  })
+
+
+
   ngOnInit(): void {
     this.reqService.ChartData(this.data[0].id, "USD", 365).subscribe((response: any)=>{
       console.log(response);

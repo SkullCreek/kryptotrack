@@ -6,6 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route('/login', methods=['POST'])
 def login():
   try:
@@ -99,11 +100,11 @@ def signup():
           return jsonify(response)
         encoded = jwt.encode({"username": request.form['username']}, "123", algorithm="HS256")
         response = {
-          "auth": "Success",
+          "auth": "success",
           "message": "Signup Success",
           "token": encoded
         }
-        return response
+        return jsonify(response)
       else:
         response = {
           "auth": "error",
